@@ -11,8 +11,7 @@ npx shadcn@latest init
 Abra o arquivo components.json e adicione no registries.
 ```json
   "registries": {
-    "@devemp": "https://raw.githubusercontent.com/cristianoteles/shadcn-registry/public/r/{name}.json"
-    
+    "@devemp": "https://raw.githubusercontent.com/cristianoteles/shadcn-registry/refs/heads/main/public/r/{name}.json"
   }
 ```
 
