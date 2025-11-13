@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "feature-pwa",
+  "type": "registry:item",
+  "title": "Prepare PWA",
+  "description": "Create structure for PWA",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/features/configs/site.ts",
+      "content": "export const siteConfig = {\n  name: \"App Name\",\n  title: \"SaaS Platform\",\n  description:\n    \"Base structure for a multi-organization SaaS application.\",\n  url: \"https://github.com/your-repo\",\n  ogImage: \"https://github.com/your-repo/og.jpg\",\n  logo: \"/logo.png\",\n  links: {\n    github: \"https://github.com/your-repo\",\n  },\n};\n\nexport type SiteConfig = typeof siteConfig;\n",
+      "type": "registry:file",
+      "target": "features/devemp/configs/site.tsx"
+    },
+    {
+      "path": "registry/features/pwa/manifest.ts",
+      "content": "//https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json\nimport { MetadataRoute } from \"next\"\n\nconst info: MetadataRoute.Manifest = {\n  id: \"pwa-web\",\n  name: \"ADAPT Condominio Web\",\n  short_name: \"ADAPT Condominio\",\n  description: \"ADAPT ADAPT Condominio Web\",\n  start_url: \"/?start=a2hs\",\n  scope: \"/\",\n  display: \"standalone\",\n  //display_override: ['fullscreen', 'minimal-ui'],\n  orientation: \"portrait\",\n  //background_color: \"#0B6046\",\n  //theme_color: \"#0B6046\",\n  screenshots: [\n    {\n      src: \"/assets/screenshots/login.png\",\n      sizes: \"360x740\",\n      type: \"image/png\",\n      form_factor: \"narrow\",\n    },\n    {\n      src: \"/assets/screenshots/dashboard.png\",\n      sizes: \"360x740\",\n      type: \"image/png\",\n      form_factor: \"narrow\",\n    },\n    {\n      src: \"/assets/screenshots/dashboard.png\",\n      sizes: \"360x740\",\n      type: \"image/png\",\n      form_factor: \"narrow\",\n    },\n    {\n      src: \"/assets/screenshots/dashboard_desktop.png\",\n      sizes: \"1280x800\",\n      type: \"image/png\",\n      form_factor: \"wide\",\n    },\n  ],\n  icons: [\n    {\n      src: \"favicon.ico\",\n      sizes: \"any\",\n      type: \"image/x-icon\",\n      purpose: \"maskable\"\n    },\n    {\n      src: \"/assets/icons/icon-192x192.png\",\n      sizes: \"any\",\n      type: \"image/png\",\n      purpose: \"maskable\"\n    },\n    {\n      src: \"/assets/icons/icon-192x192.png\",\n      sizes: \"192x192\",\n      type: \"image/png\",\n      purpose: \"maskable\",\n    },\n    {\n      src: \"/assets/icons/icon-16x16.png\",\n      sizes: \"16x16\",\n      type: \"image/png\",\n    },\n    {\n      src: \"/assets/icons/icon-32x32.png\",\n      sizes: \"32x32\",\n      type: \"image/png\",\n    },\n    {\n      src: \"/assets/icons/icon-512x512.png\",\n      sizes: \"512x512\",\n      type: \"image/png\",\n    },\n  ],\n}\n\nexport default function manifest(): MetadataRoute.Manifest {\n  return info\n}\n",
+      "type": "registry:file",
+      "target": "app/manifest.ts"
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "devemp",
+  "homepage": "https://devemp.com.br",
+  "items": [
+    {
+      "name": "feature-configs",
+      "type": "registry:item",
+      "title": "Prepare configs",
+      "description": "Create structure for configs",
+      "files": [
+        {
+          "path": "registry/features/configs/site.ts",
+          "type": "registry:file",
+          "target": "features/devemp/configs/site.tsx"
+        },
+        {
+          "path": "registry/features/configs/nav.ts",
+          "type": "registry:file",
+          "target": "features/devemp/configs/nav.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-pwa",
+      "type": "registry:item",
+      "title": "Prepare PWA",
+      "description": "Create structure for PWA",
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/features/configs/site.ts",
+          "type": "registry:file",
+          "target": "features/devemp/configs/site.tsx"
+        },
+        {
+          "path": "registry/features/pwa/manifest.ts",
+          "type": "registry:file",
+          "target": "app/manifest.ts"
+        }
+      ]
+    },
+    {
+      "name": "layout",
+      "type": "registry:block",
+      "title": "Layout multitenacy",
+      "description": "Layout multitenacy",
+      "registryDependencies": ["@devemp/feature-configs", "avatar", "button", "dialog", "dropdown-menu"],
+      "dependencies": ["next-themes"],
+      "files": [
+        {
+          "path": "registry/components/global/HelpTrigger.tsx",
+          "type": "registry:component",
+          "target": "components/devemp/global/HelpTrigger.tsx"
+        },
+        {
+          "path": "registry/components/global/Logo.tsx",
+          "type": "registry:component",
+          "target": "components/devemp/global/Logo.tsx"
+        },
+        {
+          "path": "registry/components/global/NotificationsTrigger.tsx",
+          "type": "registry:component",
+          "target": "components/devemp/global/NotificationsTrigger.tsx"
+        },
+        {
+          "path": "registry/components/global/SuperAdminReturnButton.tsx",
+          "type": "registry:component",
+          "target": "components/devemp/global/SuperAdminReturnButton.tsx"
+        },
+        {
+          "path": "registry/components/global/ThemeToggle.tsx",
+          "type": "registry:component",
+          "target": "components/devemp/global/ThemeToggle.tsx"
+        },
+        {
+          "path": "registry/components/global/UserNav.tsx",
+          "type": "registry:component",
+          "target": "components/devemp/global/UserNav.tsx"
+        },
+        {
+          "path": "registry/components/layout/AppShell.tsx",
+          "type": "registry:component",
+          "target": "components/devemp/layout/AppShell.tsx"
+        },
+        {
+          "path": "registry/components/layout/Header.tsx",
+          "type": "registry:component",
+          "target": "components/devemp/layout/Header.tsx"
+        },
+        {
+          "path": "registry/components/layout/MobileNav.tsx",
+          "type": "registry:component",
+          "target": "components/devemp/layout/MobileNav.tsx"
+        },
+        {
+          "path": "registry/components/layout/OrgShell.tsx",
+          "type": "registry:component",
+          "target": "components/devemp/layout/OrgShell.tsx"
+        },
+        {
+          "path": "registry/components/layout/Sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/devemp/layout/Sidebar.tsx"
+        },
+        {
+          "path": "registry/components/providers/OrganizationProvider.tsx",
+          "type": "registry:component",
+          "target": "components/devemp/providers/OrganizationProvider.tsx"
+        },
+        {
+          "path": "registry/components/providers/SessionProvider.tsx",
+          "type": "registry:component",
+          "target": "components/devemp/providers/SessionProvider.tsx"
+        },
+        {
+          "path": "registry/components/providers/ThemeProvider.tsx",
+          "type": "registry:component",
+          "target": "components/devemp/providers/ThemeProvider.tsx"
+        },
+        {
+          "path": "registry/item/org/layout.tsx",
+          "type": "registry:page",
+          "target": "app/o/[org]/layout.tsx"
+        },
+        {
+          "path": "registry/item/org/page.tsx",
+          "type": "registry:page",
+          "target": "app/o/[org]/page.tsx"
+        },
+        {
+          "path": "registry/hooks/useOrganization.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "registry/hooks/useSidebar.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "registry/hooks/useTheme.ts",
+          "type": "registry:hook"
+        },
+        {
+          "path": "registry/features/organization/OrganizationService.ts",
+          "type": "registry:item",
+          "target": "features/organization/OrganizationService.ts"
+        },
+        {
+          "path": "registry/features/organization/OrganizationUserStorage.ts",
+          "type": "registry:item",
+          "target": "features/organization/OrganizationUserStorage.ts"
+        }
+      ]
+    }
+  ]
+}

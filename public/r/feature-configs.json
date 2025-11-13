@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "feature-configs",
+  "type": "registry:item",
+  "title": "Prepare configs",
+  "description": "Create structure for configs",
+  "files": [
+    {
+      "path": "registry/features/configs/site.ts",
+      "content": "export const siteConfig = {\n  name: \"App Name\",\n  title: \"SaaS Platform\",\n  description:\n    \"Base structure for a multi-organization SaaS application.\",\n  url: \"https://github.com/your-repo\",\n  ogImage: \"https://github.com/your-repo/og.jpg\",\n  logo: \"/logo.png\",\n  links: {\n    github: \"https://github.com/your-repo\",\n  },\n};\n\nexport type SiteConfig = typeof siteConfig;\n",
+      "type": "registry:file",
+      "target": "features/devemp/configs/site.tsx"
+    },
+    {
+      "path": "registry/features/configs/nav.ts",
+      "content": "import { Home, Settings, BarChart2 } from \"lucide-react\";\n\nexport type NavItem = {\n  title: string;\n  href: string;\n  icon: React.ElementType;\n  label?: string;\n  disabled?: boolean;\n  organization: boolean;\n  mobile: boolean;\n};\n\nexport const mainNav: NavItem[] = [\n  {\n    title: \"Dashboard\",\n    href: \"/dashboard\",\n    icon: Home,\n    organization: true,\n    mobile: true,\n  },\n  {\n    title: \"Analytics\",\n    href: \"/analytics\",\n    icon: BarChart2,\n    organization: true,\n    mobile: true,\n  },\n  {\n    title: \"Settings\",\n    href: \"/settings\",\n    icon: Settings,\n    organization: true,\n    mobile: true,\n  },\n];\n\nexport const mobileNav = mainNav.filter((item) => item.mobile);\n",
+      "type": "registry:file",
+      "target": "features/devemp/configs/nav.tsx"
+    }
+  ]
+}
