@@ -1,4 +1,5 @@
-import { OrgShell } from "@/components/devemp/layout/OrgShell";
+import { AppShell } from "@/registry/components/layout/AppShell";
+import { OrganizationProvider } from "@/registry/components/providers/OrganizationProvider";
 
 interface OrganizationLayoutProps {
   children: React.ReactNode;
@@ -7,5 +8,9 @@ interface OrganizationLayoutProps {
 
 export default async function OrganizationLayout({ children, params }: OrganizationLayoutProps) {
   const { org } = await params;
-  return <OrgShell orgId={org} key={`org-${org}`}>{children}</OrgShell>;
+  return (
+    <OrganizationProvider orgId={org} key={`org-${org}`}>
+      <AppShell>{children}</AppShell>
+    </OrganizationProvider>
+  )
 }

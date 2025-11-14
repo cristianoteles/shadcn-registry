@@ -45,7 +45,7 @@
       "type": "registry:block",
       "title": "Layout multitenacy",
       "description": "Layout multitenacy",
-      "registryDependencies": ["@devemp/feature-configs", "avatar", "button", "dialog", "dropdown-menu"],
+      "registryDependencies": ["@devemp/feature-configs", "avatar", "button", "dialog", "dropdown-menu", "sonner"],
       "dependencies": ["next-themes"],
       "files": [
         {
@@ -92,11 +92,6 @@
           "path": "registry/components/layout/MobileNav.tsx",
           "type": "registry:component",
           "target": "components/devemp/layout/MobileNav.tsx"
-        },
-        {
-          "path": "registry/components/layout/OrgShell.tsx",
-          "type": "registry:component",
-          "target": "components/devemp/layout/OrgShell.tsx"
         },
         {
           "path": "registry/components/layout/Sidebar.tsx",

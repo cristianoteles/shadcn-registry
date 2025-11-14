@@ -12,7 +12,8 @@
     "avatar",
     "button",
     "dialog",
-    "dropdown-menu"
+    "dropdown-menu",
+    "sonner"
   ],
   "files": [
     {
@@ -53,7 +54,7 @@
     },
     {
       "path": "registry/components/layout/AppShell.tsx",
-      "content": "import { Header } from \"./Header\";\nimport { Sidebar } from \"./Sidebar\";\nimport { MobileNav } from \"./MobileNav\";\nimport { useSidebar } from \"@/hooks/useSidebar\";\n\ninterface AppShellProps {\n  children: React.ReactNode;\n}\n\nexport function AppShell({ children }: AppShellProps) {\n  const { isCollapsed, toggleSidebar } = useSidebar();\n\n  return (\n    <div className={`grid min-h-screen w-full transition-all duration-300 ${isCollapsed\n      ? \"md:grid-cols-[64px_1fr]\"\n      : \"md:grid-cols-[256px_1fr] lg:grid-cols-[288px_1fr]\"\n      }`}>\n      <Sidebar isCollapsed={isCollapsed} />\n      <div className=\"flex flex-col\">\n        <Header isCollapsed={isCollapsed} toggleSidebar={toggleSidebar} />\n        <main className=\"flex flex-1 flex-col gap-4 p-4 pt-24 md:pt-4 lg:gap-6 lg:p-6\">\n          {children}\n        </main>\n      </div>\n      <MobileNav />\n    </div>\n  );\n}\n",
+      "content": "\"use client\";\n\nimport { Header } from \"./Header\";\nimport { Sidebar } from \"./Sidebar\";\nimport { MobileNav } from \"./MobileNav\";\nimport { useSidebar } from \"@/hooks/useSidebar\";\nimport { ThemeProvider } from \"../providers/ThemeProvider\";\nimport { SessionProvider } from \"../providers/SessionProvider\";\nimport { Toaster } from \"@/components/ui/sonner\";\n\ninterface AppShellProps {\n  children: React.ReactNode;\n}\n\nexport function AppShell({ children }: AppShellProps) {\n  const { isCollapsed, toggleSidebar } = useSidebar();\n  return (\n    <ThemeProvider\n      attribute=\"class\"\n      defaultTheme=\"system\"\n      enableSystem\n      disableTransitionOnChange\n    >\n      <SessionProvider>\n        <div className={`grid min-h-screen w-full transition-all duration-300 ${isCollapsed\n          ? \"md:grid-cols-[64px_1fr]\"\n          : \"md:grid-cols-[256px_1fr] lg:grid-cols-[288px_1fr]\"\n          }`}>\n          <Sidebar isCollapsed={isCollapsed} />\n          <div className=\"flex flex-col\">\n            <Header isCollapsed={isCollapsed} toggleSidebar={toggleSidebar} />\n            <main className=\"flex flex-1 flex-col gap-4 p-4 pt-24 md:pt-4 lg:gap-6 lg:p-6\">\n              {children}\n            </main>\n          </div>\n          <MobileNav />\n        </div>\n        <Toaster />\n      </SessionProvider>\n    </ThemeProvider>\n  );\n}\n",
       "type": "registry:component",
       "target": "components/devemp/layout/AppShell.tsx"
     },
@@ -68,12 +69,6 @@
       "content": "\"use client\";\n\nimport Link from \"next/link\";\nimport { usePathname } from \"next/navigation\";\nimport { Menu } from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuTrigger,\n} from \"@/components/ui/dropdown-menu\";\nimport { SuperAdminReturnButton } from \"../global/SuperAdminReturnButton\";\nimport { NotificationsTrigger } from \"../global/NotificationsTrigger\";\nimport { HelpTrigger } from \"../global/HelpTrigger\";\nimport { useOrganization } from \"@/hooks/useOrganization\";\nimport { useEffect, useState } from \"react\";\nimport { mobileNav } from \"@/features/devemp/configs/nav\";\nimport { UserNav } from \"../global/UserNav\";\n\nexport function MobileNav() {\n  const [isClient, setIsClient] = useState<boolean>(false);\n\n  const { organization } = useOrganization();\n  const pathname = usePathname();\n\n  useEffect(() => setIsClient(true), []);\n  if (!isClient) return null\n\n  return (\n    <div className=\"fixed inset-x-0 bottom-0 z-50 border-t bg-background/95 backdrop-blur-sm md:hidden\">\n      <nav className=\"flex items-center justify-around p-1\">\n        {mobileNav.map((item) => {\n          const href = item.organization && organization ? `/o/${organization.id}${item.href}` : item.href;\n          return (\n            <Link\n              key={href}\n              href={href}\n              className={cn(\n                \"flex flex-col items-center gap-1 rounded-md p-2 text-sm font-medium text-muted-foreground hover:bg-muted\",\n                pathname === href && \"text-primary\"\n              )}\n            >\n              <item.icon className=\"h-5 w-5\" />\n              <span>{item.title}</span>\n            </Link>\n          )\n        })}\n        <DropdownMenu>\n          <DropdownMenuTrigger asChild>\n            <Button\n              variant=\"ghost\"\n              className=\"flex flex-col items-center gap-1 rounded-md p-2 text-sm font-medium text-muted-foreground hover:bg-muted\"\n            >\n              <Menu className=\"h-5 w-5\" />\n              <span>Menu</span>\n            </Button>\n          </DropdownMenuTrigger>\n          <DropdownMenuContent align=\"center\" className=\"w-48\">\n            <div className=\"flex flex-col gap-2 p-2\">\n              <SuperAdminReturnButton />\n              <NotificationsTrigger />\n              <HelpTrigger />\n              <UserNav />\n            </div>\n          </DropdownMenuContent>\n        </DropdownMenu>\n      </nav>\n    </div>\n  );\n}\n",
       "type": "registry:component",
       "target": "components/devemp/layout/MobileNav.tsx"
-    },
-    {
-      "path": "registry/components/layout/OrgShell.tsx",
-      "content": "\"use client\";\n\nimport { OrganizationProvider } from \"@/components/devemp/providers/OrganizationProvider\";\nimport { AppShell } from \"@/components/devemp/layout/AppShell\";\n\ninterface OrgShellProps {\n  children: React.ReactNode;\n  orgId: string;\n}\n\nexport function OrgShell({ children, orgId }: OrgShellProps) {\n  return (\n    <OrganizationProvider orgId={orgId}>\n      <AppShell>{children}</AppShell>\n    </OrganizationProvider>\n  );\n}\n",
-      "type": "registry:component",
-      "target": "components/devemp/layout/OrgShell.tsx"
     },
     {
       "path": "registry/components/layout/Sidebar.tsx",
@@ -101,7 +96,7 @@
     },
     {
       "path": "registry/item/org/layout.tsx",
-      "content": "import { OrgShell } from \"@/components/devemp/layout/OrgShell\";\n\ninterface OrganizationLayoutProps {\n  children: React.ReactNode;\n  params: Promise<{ org: string }>;\n}\n\nexport default async function OrganizationLayout({ children, params }: OrganizationLayoutProps) {\n  const { org } = await params;\n  return <OrgShell orgId={org} key={`org-${org}`}>{children}</OrgShell>;\n}\n",
+      "content": "import { AppShell } from \"@/registry/components/layout/AppShell\";\nimport { OrganizationProvider } from \"@/registry/components/providers/OrganizationProvider\";\n\ninterface OrganizationLayoutProps {\n  children: React.ReactNode;\n  params: Promise<{ org: string }>;\n}\n\nexport default async function OrganizationLayout({ children, params }: OrganizationLayoutProps) {\n  const { org } = await params;\n  return (\n    <OrganizationProvider orgId={org} key={`org-${org}`}>\n      <AppShell>{children}</AppShell>\n    </OrganizationProvider>\n  )\n}\n",
       "type": "registry:page",
       "target": "app/o/[org]/layout.tsx"
     },
