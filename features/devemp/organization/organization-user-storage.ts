@@ -1,6 +1,6 @@
 "use client"
 
-import { OrganizationProviderData } from "@/components/devemp/providers/OrganizationProvider";
+import { OrganizationProviderData } from "@/components/devemp/providers/organization-provider";
 
 const STORAGE_KEY_ALL = "user-organizations";
 const STORAGE_KEY_CURRENT = "user-organization-current";

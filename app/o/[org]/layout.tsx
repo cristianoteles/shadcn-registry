@@ -1,5 +1,5 @@
-import { AppShell } from "@/registry/components/layout/AppShell";
-import { OrganizationProvider } from "@/registry/components/providers/OrganizationProvider";
+import { AppShell } from "@/registry/components/layout/app-shell";
+import { OrganizationProvider } from "@/registry/components/providers/organization-provider";
 
 interface OrganizationLayoutProps {
   children: React.ReactNode;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useSession } from "@/components/devemp/providers/SessionProvider";
+import { useSession } from "@/components/devemp/providers/session-provider";
 import { Button } from "@/components/ui/button";
 import { Eye } from "lucide-react";
 

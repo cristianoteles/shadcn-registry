@@ -1,6 +1,6 @@
 "use client"
 
-import { OrganizationProviderData } from "@/components/devemp/providers/OrganizationProvider";
+import { OrganizationProviderData } from "@/components/devemp/providers/organization-provider";
 
 const fakeOrganizations: OrganizationProviderData[] = [
   { id: "org-1", name: "Acme Corporation", alias: "acme", branding: { logo: "/logo.png", primaryColor: "#FFF", secondaryColor: "" } },

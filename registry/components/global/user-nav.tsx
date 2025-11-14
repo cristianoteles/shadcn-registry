@@ -11,8 +11,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useSession } from "@/components/devemp/providers/SessionProvider";
-import { ThemeToggle } from "./ThemeToggle";
+import { useSession } from "../providers/session-provider";
+import { ThemeToggle } from "./theme-toggle";
 
 export function UserNav() {
   const { session } = useSession();

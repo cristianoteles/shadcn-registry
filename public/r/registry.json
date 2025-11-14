@@ -49,69 +49,74 @@
       "dependencies": ["next-themes"],
       "files": [
         {
-          "path": "registry/components/global/HelpTrigger.tsx",
+          "path": "registry/components/global/help-trigger.tsx",
           "type": "registry:component",
-          "target": "components/devemp/global/HelpTrigger.tsx"
+          "target": "components/devemp/global/help-trigger.tsx"
         },
         {
-          "path": "registry/components/global/Logo.tsx",
+          "path": "registry/components/global/logo.tsx",
           "type": "registry:component",
-          "target": "components/devemp/global/Logo.tsx"
+          "target": "components/devemp/global/logo.tsx"
         },
         {
-          "path": "registry/components/global/NotificationsTrigger.tsx",
+          "path": "registry/components/global/notifications-trigger.tsx",
           "type": "registry:component",
-          "target": "components/devemp/global/NotificationsTrigger.tsx"
+          "target": "components/devemp/global/notifications-trigger.tsx"
         },
         {
-          "path": "registry/components/global/SuperAdminReturnButton.tsx",
+          "path": "registry/components/global/super-admin-return-button.tsx",
           "type": "registry:component",
-          "target": "components/devemp/global/SuperAdminReturnButton.tsx"
+          "target": "components/devemp/global/super-admin-return-button.tsx"
         },
         {
-          "path": "registry/components/global/ThemeToggle.tsx",
+          "path": "registry/components/global/theme-toggle.tsx",
           "type": "registry:component",
-          "target": "components/devemp/global/ThemeToggle.tsx"
+          "target": "components/devemp/global/theme-toggle.tsx"
         },
         {
-          "path": "registry/components/global/UserNav.tsx",
+          "path": "registry/components/global/user-nav.tsx",
           "type": "registry:component",
-          "target": "components/devemp/global/UserNav.tsx"
+          "target": "components/devemp/global/user-nav.tsx"
         },
         {
-          "path": "registry/components/layout/AppShell.tsx",
+          "path": "registry/components/layout/app-shell.tsx",
           "type": "registry:component",
-          "target": "components/devemp/layout/AppShell.tsx"
+          "target": "components/devemp/layout/app-shell.tsx"
         },
         {
-          "path": "registry/components/layout/Header.tsx",
+          "path": "registry/components/layout/header.tsx",
           "type": "registry:component",
-          "target": "components/devemp/layout/Header.tsx"
+          "target": "components/devemp/layout/header.tsx"
         },
         {
-          "path": "registry/components/layout/MobileNav.tsx",
+          "path": "registry/components/layout/mobile-nav.tsx",
           "type": "registry:component",
-          "target": "components/devemp/layout/MobileNav.tsx"
+          "target": "components/devemp/layout/mobile-nav.tsx"
         },
         {
-          "path": "registry/components/layout/Sidebar.tsx",
+          "path": "registry/components/layout/sidebar.tsx",
           "type": "registry:component",
-          "target": "components/devemp/layout/Sidebar.tsx"
+          "target": "components/devemp/layout/sidebar.tsx"
         },
         {
-          "path": "registry/components/providers/OrganizationProvider.tsx",
+          "path": "registry/components/providers/organization-provider.tsx",
           "type": "registry:component",
-          "target": "components/devemp/providers/OrganizationProvider.tsx"
+          "target": "components/devemp/providers/organization-provider.tsx"
         },
         {
-          "path": "registry/components/providers/SessionProvider.tsx",
+          "path": "registry/components/providers/session-provider.tsx",
           "type": "registry:component",
-          "target": "components/devemp/providers/SessionProvider.tsx"
+          "target": "components/devemp/providers/session-provider.tsx"
         },
         {
-          "path": "registry/components/providers/ThemeProvider.tsx",
+          "path": "registry/components/providers/theme-provider.tsx",
           "type": "registry:component",
-          "target": "components/devemp/providers/ThemeProvider.tsx"
+          "target": "components/devemp/providers/theme-provider.tsx"
+        },
+        {
+          "path": "registry/item/layout.tsx",
+          "type": "registry:page",
+          "target": "app/layout.tsx"
         },
         {
           "path": "registry/item/org/layout.tsx",
@@ -124,26 +129,26 @@
           "target": "app/o/[org]/page.tsx"
         },
         {
-          "path": "registry/hooks/useOrganization.ts",
+          "path": "registry/hooks/use-organization.ts",
           "type": "registry:hook"
         },
         {
-          "path": "registry/hooks/useSidebar.ts",
+          "path": "registry/hooks/use-sidebar.ts",
           "type": "registry:hook"
         },
         {
-          "path": "registry/hooks/useTheme.ts",
+          "path": "registry/hooks/use-theme.ts",
           "type": "registry:hook"
         },
         {
-          "path": "registry/features/organization/OrganizationService.ts",
+          "path": "registry/features/organization/organization-service.ts",
           "type": "registry:item",
-          "target": "features/organization/OrganizationService.ts"
+          "target": "features/organization/organization-service.ts"
         },
         {
-          "path": "registry/features/organization/OrganizationUserStorage.ts",
+          "path": "registry/features/organization/organization-user-storage.ts",
           "type": "registry:item",
-          "target": "features/organization/OrganizationUserStorage.ts"
+          "target": "features/organization/organization-user-storage.ts"
         }
       ]
     }

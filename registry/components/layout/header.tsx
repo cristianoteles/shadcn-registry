@@ -1,20 +1,20 @@
 "use client";
 
-import { UserNav } from "../global/UserNav";
-import { NotificationsTrigger } from "../global/NotificationsTrigger";
-import { HelpTrigger } from "../global/HelpTrigger";
-import { SuperAdminReturnButton } from "../global/SuperAdminReturnButton";
-import { useOrganization } from "@/hooks/useOrganization";
+import { UserNav } from "../global/user-nav";
+import { NotificationsTrigger } from "../global/notifications-trigger";
+import { HelpTrigger } from "../global/help-trigger";
+import { SuperAdminReturnButton } from "../global/super-admin-return-button";
+import { useOrganization } from "@/hooks/use-organization";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ArrowLeftRight, Check, PanelLeftClose, PanelLeftOpen } from "lucide-react";
-import { OrganizationProviderData } from "../providers/OrganizationProvider";
+import { OrganizationProviderData } from "../providers/organization-provider";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { getOrganizationsUser } from "@/features/devemp/organization/OrganizationService";
-import { OrganizationUserStorage } from "@/features/devemp/organization/OrganizationUserStorage";
+import { getOrganizationsUser } from "@/features/devemp/organization/organization-service";
+import { OrganizationUserStorage } from "@/features/devemp/organization/organization-user-storage";
 import { siteConfig } from "@/features/devemp/configs/site";
 
 interface HeaderProps {

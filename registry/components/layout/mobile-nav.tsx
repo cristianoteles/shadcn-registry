@@ -11,13 +11,13 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { SuperAdminReturnButton } from "../global/SuperAdminReturnButton";
-import { NotificationsTrigger } from "../global/NotificationsTrigger";
-import { HelpTrigger } from "../global/HelpTrigger";
-import { useOrganization } from "@/hooks/useOrganization";
+import { SuperAdminReturnButton } from "../global/super-admin-return-button";
+import { NotificationsTrigger } from "../global/notifications-trigger";
+import { HelpTrigger } from "../global/help-trigger";
+import { useOrganization } from "@/hooks/use-organization";
 import { useEffect, useState } from "react";
 import { mobileNav } from "@/features/devemp/configs/nav";
-import { UserNav } from "../global/UserNav";
+import { UserNav } from "../global/user-nav";
 
 export function MobileNav() {
   const [isClient, setIsClient] = useState<boolean>(false);

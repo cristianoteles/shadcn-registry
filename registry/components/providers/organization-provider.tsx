@@ -1,6 +1,6 @@
 "use client";
 
-import { OrganizationUserStorage } from "@/features/devemp/organization/OrganizationUserStorage";
+import { OrganizationUserStorage } from "@/features/devemp/organization/organization-user-storage";
 import React, { createContext, useContext, useMemo } from "react";
 
 export type OrganizationProviderData = {

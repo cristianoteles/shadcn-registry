@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { useOrganization } from "@/hooks/useOrganization";
+import { useOrganization } from "@/hooks/use-organization";
 import { useEffect, useState } from "react";
 import { siteConfig } from "@/features/devemp/configs/site";
 import { mainNav } from "@/features/devemp/configs/nav";

@@ -1,7 +1,7 @@
 "use client";
 
 import { siteConfig } from "@/features/devemp/configs/site";
-import { useOrganization } from "@/hooks/useOrganization";
+import { useOrganization } from "@/hooks/use-organization";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 

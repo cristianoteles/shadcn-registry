@@ -1,12 +1,12 @@
 "use client";
 
-import { Header } from "./Header";
-import { Sidebar } from "./Sidebar";
-import { MobileNav } from "./MobileNav";
-import { useSidebar } from "@/hooks/useSidebar";
-import { ThemeProvider } from "../providers/ThemeProvider";
-import { SessionProvider } from "../providers/SessionProvider";
+import { Header } from "./header";
+import { Sidebar } from "./sidebar";
+import { useSidebar } from "@/hooks/use-sidebar";
 import { Toaster } from "@/components/ui/sonner";
+import { ThemeProvider } from "../providers/theme-provider";
+import { SessionProvider } from "../providers/session-provider";
+import { MobileNav } from "./mobile-nav";
 
 interface AppShellProps {
   children: React.ReactNode;
